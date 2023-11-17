@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Validation Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.4.js"
+		integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+	<script defer src="main.js"></script>
+</head>
+
+<body>
+	<!-- a container div to center the form on the page -->
+	<div class="container">
+		<!-- the login form -->
+		<form id="login-form">
+			<!-- heading for the form -->
+			<h1>Login</h1>
+			<!-- label and input field for email -->
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+			<!-- label and input field for password with a pattern attribute to enforce password requirements -->
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+			<!-- label and input field for confirming password -->
+			<label for="confirm-password">Confirm Password:</label>
+			<input type="password" id="confirm-password" name="confirm-password" required>
+			<!-- label and input field for phone number -->
+			<label for="phone">Phone:</label>
+			<input type="tel" id="phone" name="phone" placeholder="optional">
+			<!-- button to submit the form -->
+			<button type="submit">Login</button>
+			<!-- warning message -->
+			<p id="warning-message" style="display: none; color: red;">Passwords do not match!</p>
+			<!-- get weather info -->
+			<div class="weather-request">
+				<label for="city-input">Enter a city:</label>
+				<input type="text" id="city-input" placeholder="npr. Zagreb">
+
+				<button id="submit-btn">Get data</button>
+
+				<div id="result-container">
+					<p>Temperature: <span id="temp"></span></p>
+					<p>Latitude: <span id="lat"></span></p>
+					<p>Longitude: <span id="long"></span></p>
+				</div>
+			</div>
+		</form>
+	</div>
+
+</body>
+
+</html>
